@@ -45,9 +45,6 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        # This will pre-fetch the asset which can then be deployed during the install/upgrade scripts with :
-        #    ynh_setup_source --dest_dir="$install_dir"
-        # You can also define other assets than "main" and add --source_id="foobar" in the previous command
         url = "https://github.com/giandonatoinverso/PHP-Dynamic-Qr-code/archive/refs/tags/v2.2.zip"
         sha256 = "cb8b6ed893a0552ec54801f7a61a208b38e0860e08ac67d3bead18475c1b816e"
 
@@ -59,5 +56,8 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "php8.2-fpm"
+    packages = "mariadb-server, php8.2-fpm, php8.2-mysql"
+
+    [resources.database]
+    type = "mysql"
 
