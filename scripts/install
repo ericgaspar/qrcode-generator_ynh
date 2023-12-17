@@ -45,16 +45,6 @@ ynh_add_nginx_config
 #chown $app:$app "$install_dir/some_config_file"
 
 #=================================================
-# GENERIC FINALIZATION
-#=================================================
-# START SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
-
-# Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 ynh_script_progression --message="Installation of $app completed" --last
